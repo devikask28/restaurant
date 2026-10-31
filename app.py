@@ -44,7 +44,7 @@ with tab_customer:
             label = label_comment(comment.strip())
             new_row = pd.DataFrame([{"comment": comment.strip(), "rating": stars + 1, "label": label}])
             pd.concat([df, new_row], ignore_index=True).to_csv(CSV_FILE, index=False)
-            df.to_csv(CSV_FILE)
+            df.pd.read_csv(CSV_FILE)
             st.success("Thank you for your feedback!")
             st.caption(f"Behind the scenes, the app labeled it: {label}")
 
