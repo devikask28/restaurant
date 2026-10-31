@@ -75,7 +75,7 @@ with tab_owner:
             st.plotly_chart(fig, width="stretch")
 
         with col2:
-            st.caption("Average stars by category (the shortest bar is the biggest problem)")
+            st.caption("Average stars by category")
             avg = df.groupby("label")["rating"].mean().round(1).reset_index().sort_values("rating")
             fig = px.bar(avg, x="label", y="rating", color="label", text="rating",
                          color_discrete_map=COLORS, range_y=[0, 5])
